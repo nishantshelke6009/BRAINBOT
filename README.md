@@ -40,7 +40,8 @@ This project is a part of a larger **Prompt Engineering & AI Integration Project
 
 > Add screenshots here for visual reference
 
-![Screenshot of BrainBot Chat UI](assets/screenshot1.png)
+![image](https://github.com/user-attachments/assets/41a775d8-8c5a-493e-b4ac-a629e209508c)
+
 
 ---
 
