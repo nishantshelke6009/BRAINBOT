@@ -1,4 +1,4 @@
-# 🧠 BrainBot – Your C Programming Assistant
+#  Your C Programming Assistant
 
 Welcome to **BrainBot**, a smart, responsive, and educational chatbot designed to help learners master **C programming** in a fun and interactive way. Whether you're a complete beginner or someone brushing up your skills, BrainBot is here to assist you.
 
