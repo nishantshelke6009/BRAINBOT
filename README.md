@@ -81,7 +81,7 @@ c-assistbot/
 | **HTML5**  | Structure of the chatbot UI      |
 | **CSS3**   | Styling and mobile responsiveness|
 | **JavaScript** | User interaction + API integration |
-| **LLM API** (e.g. OpenAI) | Generates responses to C questions |
+| **LLM API**  | Generates responses to C questions |
 
 ---
 
