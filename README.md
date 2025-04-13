@@ -58,7 +58,7 @@ This project is a part of a larger **Prompt Engineering & AI Integration Project
 - HTML5  
 - CSS3  
 - JavaScript (Vanilla JS)  
-- (Optional) OpenAI API or any LLM API  
+- (OpenAI API or any LLM API  
 - Git & GitHub for version control and deployment  
 
 ---
