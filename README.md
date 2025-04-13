@@ -45,8 +45,8 @@ Behind the scenes, an intelligent LLM (like OpenAI's GPT or a local model) gener
 
 ## 📸 Screenshots
 
-> *(Add your own screenshots here)*  
-![C AssistBot Screenshot](link-to-screenshot.png)
+![image](https://github.com/user-attachments/assets/03be2622-e814-4063-95ba-39abd72734ca)
+
 
 ---
 
