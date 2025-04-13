@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BrainBot - C Programming Assistant</title>
+  <title>C Programming Description</title>
   <style>
     * {
       box-sizing: border-box;
@@ -13,7 +13,7 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #2c3e50, #3498db);
+      background: linear-gradient(to right, #1e3c72, #2a5298);
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -23,64 +23,89 @@
 
     .chat-container {
       width: 100%;
-      max-width: 600px;
-      background: #ffffff;
-      border-radius: 20px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      max-width: 650px;
+      background: #fefefe;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
       display: flex;
       flex-direction: column;
       overflow: hidden;
     }
 
     .header {
-      background: #2980b9;
+      background: #1e3c72;
       color: white;
-      text-align: center;
-      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 20px;
     }
 
     .header h1 {
-      font-size: 26px;
+      font-size: 24px;
+      letter-spacing: 1px;
     }
 
-    .suggestions, .auto-suggest {
-      padding: 10px 15px;
-      background: #ecf0f1;
+    .login-btn {
+      background: white;
+      color: #1e3c72;
+      padding: 7px 14px;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .login-btn:hover {
+      background: #dce1f1;
+    }
+
+    .suggestions, .recent-questions {
+      padding: 12px 16px;
+      background: #e8ecf6;
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
     }
 
-    .suggestion-btn {
-      padding: 8px 12px;
-      border: none;
-      background: #3498db;
+    .suggestion-btn, .recent-btn {
+      padding: 7px 14px;
+      background: #1e3c72;
       color: white;
-      border-radius: 15px;
-      cursor: pointer;
+      border: none;
+      border-radius: 16px;
       font-size: 14px;
-      transition: all 0.3s ease;
+      cursor: pointer;
+      transition: 0.3s;
     }
 
-    .suggestion-btn:hover {
-      background: #2c3e91;
+    .suggestion-btn:hover, .recent-btn:hover {
+      background: #162d53;
+    }
+
+    .section-title {
+      font-weight: bold;
+      color: #1e3c72;
+      padding: 8px 16px 4px;
+      background: #f4f6fa;
+      font-size: 15px;
     }
 
     .chat-messages {
-      padding: 15px;
+      padding: 16px;
       height: 350px;
       overflow-y: auto;
-      background: #f7f9fa;
+      background: #f4f6fa;
       flex: 1;
     }
 
     .message {
       margin: 10px 0;
       max-width: 80%;
-      padding: 12px 15px;
+      padding: 12px 16px;
       border-radius: 20px;
       line-height: 1.4;
-      position: relative;
       animation: fadeIn 0.3s ease;
     }
 
@@ -90,15 +115,15 @@
     }
 
     .user-message {
-      background: #3498db;
+      background: #2a5298;
       color: white;
       margin-left: auto;
       border-bottom-right-radius: 5px;
     }
 
     .bot-message {
-      background: #ecf0f1;
-      color: #2c3e50;
+      background: #dbe6f7;
+      color: #0e2a54;
       margin-right: auto;
       border-bottom-left-radius: 5px;
     }
@@ -114,7 +139,7 @@
     }
 
     .input-container {
-      padding: 15px;
+      padding: 14px 16px;
       background: white;
       display: flex;
       flex-wrap: wrap;
@@ -135,14 +160,22 @@
       padding: 10px 20px;
       border-radius: 25px;
       border: none;
-      background: #2980b9;
+      background: #1e3c72;
       color: white;
       cursor: pointer;
       transition: background 0.3s;
     }
 
     button:hover {
-      background: #1c5982;
+      background: #14294d;
+    }
+
+    .clear-chat {
+      background: #c0392b;
+    }
+
+    .clear-chat:hover {
+      background: #922b21;
     }
 
     .typing-indicator {
@@ -154,7 +187,7 @@
     .typing-dot {
       width: 8px;
       height: 8px;
-      background: #3498db;
+      background: #2a5298;
       border-radius: 50%;
       animation: typing 1s infinite;
     }
@@ -167,35 +200,18 @@
       50% { transform: translateY(-5px); }
     }
 
-    .clear-chat {
-      background: #e74c3c;
-      margin-left: auto;
-    }
-
-    .clear-chat:hover {
-      background: #c0392b;
-    }
-
     @media (max-width: 480px) {
-      .chat-messages {
-        height: 300px;
-      }
-
-      .header h1 {
-        font-size: 20px;
-      }
-
-      #user-input {
-        font-size: 14px;
-      }
+      .chat-messages { height: 300px; }
+      .header h1 { font-size: 20px; }
+      #user-input { font-size: 14px; }
     }
   </style>
 </head>
 <body>
   <div class="chat-container">
     <div class="header">
-      <h1>🤖 BrainBot</h1>
-      <p>Your C Programming Assistant</p>
+      <h1>💻 C Programming Description</h1>
+      <button class="login-btn">Login</button>
     </div>
 
     <div class="suggestions">
@@ -205,24 +221,28 @@
       <button class="suggestion-btn" onclick="askQuestion('What is a struct?')">Struct</button>
     </div>
 
+    <div class="section-title">Recently Asked:</div>
+    <div class="recent-questions" id="recent-questions"></div>
+
     <div class="chat-messages" id="chat-messages">
       <div class="message bot-message">
-        Hi there! 👋 I'm BrainBot. Ask me anything about C programming. I can explain:
+        Welcome! 👋 I'm your C programming assistant.<br/><br/>
+        Ask me about:
         <ul>
-          <li>Syntax and concepts</li>
-          <li>Pointers & memory</li>
-          <li>Loops, functions, arrays</li>
-          <li>File handling</li>
-          <li>Dynamic memory</li>
+          <li>Basic C syntax</li>
+          <li>Pointers & memory handling</li>
+          <li>Loops, arrays, functions</li>
+          <li>File I/O</li>
+          <li>Dynamic allocation</li>
         </ul>
-        Start typing below or use the suggestions above!
+        Start typing below or use the suggestion buttons!
       </div>
     </div>
 
     <div class="input-container">
       <input type="text" id="user-input" placeholder="Ask a C programming question..." oninput="showSuggestions(this.value)">
       <button onclick="sendMessage()">Send</button>
-      <button class="clear-chat" onclick="clearChat()">Clear Chat</button>
+      <button class="clear-chat" onclick="clearChat()">Clear</button>
     </div>
   </div>
 
@@ -238,6 +258,8 @@
       "scanf": "scanf() reads user input.\n\nExample:\nint age;\nscanf(\"%d\", &age);"
     };
 
+    let recentQuestions = [];
+
     function askQuestion(question) {
       document.getElementById("user-input").value = question;
       sendMessage();
@@ -249,6 +271,7 @@
       if (!message) return;
 
       addMessage(input.value, 'user');
+      addToRecentQuestions(input.value);
       input.value = '';
 
       const typing = document.createElement('div');
@@ -286,9 +309,30 @@
       scrollToBottom();
     }
 
+    function addToRecentQuestions(question) {
+      if (recentQuestions.includes(question)) return;
+      if (recentQuestions.length >= 5) recentQuestions.shift();
+      recentQuestions.push(question);
+      updateRecentDisplay();
+    }
+
+    function updateRecentDisplay() {
+      const container = document.getElementById('recent-questions');
+      container.innerHTML = '';
+      recentQuestions.slice().reverse().forEach(q => {
+        const btn = document.createElement('button');
+        btn.className = 'recent-btn';
+        btn.textContent = q;
+        btn.onclick = () => askQuestion(q);
+        container.appendChild(btn);
+      });
+    }
+
     function clearChat() {
       document.getElementById('chat-messages').innerHTML = '';
-      addMessage("Chat cleared. Start asking new questions!", 'bot');
+      addMessage("Chat cleared. You can start asking new C programming questions now!", 'bot');
+      recentQuestions = [];
+      updateRecentDisplay();
     }
 
     function scrollToBottom() {
